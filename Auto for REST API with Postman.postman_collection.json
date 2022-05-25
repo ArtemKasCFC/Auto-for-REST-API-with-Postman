@@ -1,0 +1,1171 @@
+{
+	"info": {
+		"_postman_id": "b81b38ed-cf0a-43c9-8678-6ec94f721ded",
+		"name": "Auto for REST API with Postman",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "11929982"
+	},
+	"item": [
+		{
+			"name": "HW_1",
+			"item": [
+				{
+					"name": "Status 230",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 230\", function () {\r",
+									"    pm.response.to.have.status(230);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\"query\":\"string\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://users.bugred.ru/tasks/rest/magicsearch",
+							"protocol": "http",
+							"host": [
+								"users",
+								"bugred",
+								"ru"
+							],
+							"path": [
+								"tasks",
+								"rest",
+								"magicsearch"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Status 231",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 231\", function () {\r",
+									"    pm.response.to.have.status(231);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\"query\":\"Красавчик\",\r\n\"partyType\":\"USER\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://users.bugred.ru/tasks/rest/magicsearch",
+							"protocol": "http",
+							"host": [
+								"users",
+								"bugred",
+								"ru"
+							],
+							"path": [
+								"tasks",
+								"rest",
+								"magicsearch"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Status 232",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 232\", function () {\r",
+									"    pm.response.to.have.status(232);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\"query\":\"ст\",\r\n\"partyType\":\"USER\",\r\n\"fullSimilarity\":false\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://users.bugred.ru/tasks/rest/magicsearch",
+							"protocol": "http",
+							"host": [
+								"users",
+								"bugred",
+								"ru"
+							],
+							"path": [
+								"tasks",
+								"rest",
+								"magicsearch"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Status 233",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 233\", function () {\r",
+									"    pm.response.to.have.status(233);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\"query\":\"Рога\",\r\n\"partyType\":\"COMPANY\",\r\n\"fullSimilarity\":false\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://users.bugred.ru/tasks/rest/magicsearch",
+							"protocol": "http",
+							"host": [
+								"users",
+								"bugred",
+								"ru"
+							],
+							"path": [
+								"tasks",
+								"rest",
+								"magicsearch"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Status 234",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 234\", function () {\r",
+									"    pm.response.to.have.status(234);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\"query\":\"Ромашка\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://users.bugred.ru/tasks/rest/magicsearch",
+							"protocol": "http",
+							"host": [
+								"users",
+								"bugred",
+								"ru"
+							],
+							"path": [
+								"tasks",
+								"rest",
+								"magicsearch"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Status 235",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 235\", function () {\r",
+									"    pm.response.to.have.status(235);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\"query\":\"Ро\",\r\n\"fullSimilarity\":false\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://users.bugred.ru/tasks/rest/magicsearch",
+							"protocol": "http",
+							"host": [
+								"users",
+								"bugred",
+								"ru"
+							],
+							"path": [
+								"tasks",
+								"rest",
+								"magicsearch"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Status 455",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 455\", function () {\r",
+									"    pm.response.to.have.status(455);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://users.bugred.ru/tasks/rest/magicsearch",
+							"protocol": "http",
+							"host": [
+								"users",
+								"bugred",
+								"ru"
+							],
+							"path": [
+								"tasks",
+								"rest",
+								"magicsearch"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Status 456",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 456\", function () {\r",
+									"    pm.response.to.have.status(456);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\"query\":\"111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://users.bugred.ru/tasks/rest/magicsearch",
+							"protocol": "http",
+							"host": [
+								"users",
+								"bugred",
+								"ru"
+							],
+							"path": [
+								"tasks",
+								"rest",
+								"magicsearch"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Status 457",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 457\", function () {\r",
+									"    pm.response.to.have.status(457);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\"query\":\"string\",\r\n\"partyType\":\"Company\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://users.bugred.ru/tasks/rest/magicsearch",
+							"protocol": "http",
+							"host": [
+								"users",
+								"bugred",
+								"ru"
+							],
+							"path": [
+								"tasks",
+								"rest",
+								"magicsearch"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Status 458",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 458\", function () {\r",
+									"    pm.response.to.have.status(458);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\"query\":\"string\",\r\n\"taskStatus\":\"hzhz\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://users.bugred.ru/tasks/rest/magicsearch",
+							"protocol": "http",
+							"host": [
+								"users",
+								"bugred",
+								"ru"
+							],
+							"path": [
+								"tasks",
+								"rest",
+								"magicsearch"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Status 459",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 459\", function () {\r",
+									"    pm.response.to.have.status(459);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\"query\":\"string\",\r\n\"include\":\"hzhz\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://users.bugred.ru/tasks/rest/magicsearch",
+							"protocol": "http",
+							"host": [
+								"users",
+								"bugred",
+								"ru"
+							],
+							"path": [
+								"tasks",
+								"rest",
+								"magicsearch"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "HW_2",
+			"item": [
+				{
+					"name": "Check by status and id_company",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"let jsonData = pm.response.json()\r",
+									"\r",
+									"pm.test(\"Status code is one of (231,232,235)\", function () {\r",
+									"    pm.expect(pm.response.code).to.be.oneOf([231,232,235]);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"id_company is 21\", function () {\r",
+									"    pm.expect(jsonData.results[0].companies[0].id_company).to.eql(21);\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "\r\n{    \"query\" : \"Лунатиков\"}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://users.bugred.ru/tasks/rest/magicsearch",
+							"protocol": "http",
+							"host": [
+								"users",
+								"bugred",
+								"ru"
+							],
+							"path": [
+								"tasks",
+								"rest",
+								"magicsearch"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "HW_3",
+			"item": [
+				{
+					"name": "Find name of the company and show it in console",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Check that company exists\", function () {\r",
+									"    let nameOfTheCompany = pm.response.json().results[0].companies[1].name;\r",
+									"    console.log(nameOfTheCompany)\r",
+									"    pm.expect(nameOfTheCompany).to.eql('Компания для гендира №1');\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"query\": \"maglotky\"} ",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://users.bugred.ru/tasks/rest/magicsearch",
+							"protocol": "http",
+							"host": [
+								"users",
+								"bugred",
+								"ru"
+							],
+							"path": [
+								"tasks",
+								"rest",
+								"magicsearch"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Find user's name and quantity of the users in the page",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Check the quantity of the users \", function () {\r",
+									"    let quantity = pm.response.json().total;\r",
+									"    console.log(quantity)\r",
+									"    pm.expect(quantity).to.eql(12);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Check that company exists\", function () {\r",
+									"    let userName = pm.response.json().data[4].first_name;\r",
+									"    console.log(userName)\r",
+									"    pm.expect(userName).to.eql('Charles');\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://reqres.in/api/users",
+							"protocol": "https",
+							"host": [
+								"reqres",
+								"in"
+							],
+							"path": [
+								"api",
+								"users"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "HW_4",
+			"item": [
+				{
+					"name": "Check the email of the user with 'eql' and 'nested.include'",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"let jsonData = pm.response.json();\r",
+									"\r",
+									"pm.test(\"Check email of the user with 'eql'\", function () {\r",
+									"    pm.expect(jsonData.data[0].email).to.eql(\"george.bluth@reqres.in\");\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Check email of the user with 'nested.include'\", function () {\r",
+									"    pm.expect(jsonData).to.nested.include({\"data[0].email\" :\"george.bluth@reqres.in\"});\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://reqres.in/api/users",
+							"protocol": "https",
+							"host": [
+								"reqres",
+								"in"
+							],
+							"path": [
+								"api",
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Исправить тест №1",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var jsonData = pm.response.json();",
+									"",
+									"pm.test(\"Блок why_block показывает, по чему искали\", function () {",
+									"    pm.expect(jsonData.results[0].why_block).to.deep.eql([{",
+									"                    \"field\": \"name\",",
+									"                    \"value\": \"Ромашка\"",
+									"                }]);",
+									"});",
+									"",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "multipart/form-data"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "query",
+									"value": "Ромашка",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://users.bugred.ru/tasks/rest/magicsearch",
+							"protocol": "http",
+							"host": [
+								"users",
+								"bugred",
+								"ru"
+							],
+							"path": [
+								"tasks",
+								"rest",
+								"magicsearch"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Исправить тест №2",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var jsonData = pm.response.json();",
+									"",
+									"pm.test(\"Работает в алкоголиках и тунеяндцах\", function () {",
+									"    pm.expect(jsonData.results[0].companies[0]).to.include({",
+									"                    \"name\": \"Алкоголики и тунеядцы\",",
+									"                    \"id_company\": 15",
+									"                });",
+									"});",
+									"",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "multipart/form-data"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "query",
+									"value": "test_cu_11@mail.com",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://users.bugred.ru/tasks/rest/magicsearch",
+							"protocol": "http",
+							"host": [
+								"users",
+								"bugred",
+								"ru"
+							],
+							"path": [
+								"tasks",
+								"rest",
+								"magicsearch"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "HW_5",
+			"item": [
+				{
+					"name": "Check the types of the elements",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"let jsonData = pm.response.json();\r",
+									"\r",
+									"pm.test(\"Check that 'id' is a 'number' \", function () {\r",
+									"    pm.expect(jsonData.data[0].id).to.be.a('number');\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Check that 'email' is a 'string' \", function () {\r",
+									"    pm.expect(jsonData.data[0].email).to.be.a('string');\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Check that 'data' is an 'array' \", function () {\r",
+									"    pm.expect(jsonData.data).to.be.an('array');\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Check that 'support' is a 'abject' \", function () {\r",
+									"    pm.expect(jsonData.support).to.be.a('object');\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://reqres.in/api/users",
+							"protocol": "https",
+							"host": [
+								"reqres",
+								"in"
+							],
+							"path": [
+								"api",
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Check that the target is an instance of the given constructor",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"let jsonData = pm.response.json();\r",
+									"\r",
+									"pm.test(\"Check that 'data' is an instance of the Object \", function () {\r",
+									"    pm.expect(jsonData.data).to.be.an.instanceOf(Object).and.to.be.a('array');\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://reqres.in/api/users",
+							"protocol": "https",
+							"host": [
+								"reqres",
+								"in"
+							],
+							"path": [
+								"api",
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Check that the value includes string",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"let jsonData = pm.response.json();\r",
+									"\r",
+									"pm.test(\"Check that email has '@'\", function () {\r",
+									"    pm.expect(jsonData.data[0].email).to.include('@');\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://reqres.in/api/users",
+							"protocol": "https",
+							"host": [
+								"reqres",
+								"in"
+							],
+							"path": [
+								"api",
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Check the length of the target",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"let jsonData = pm.response.json();\r",
+									"\r",
+									"pm.test(\"Check that the length of the 'data' is 6\", function () {\r",
+									"    pm.expect(jsonData.data).to.have.lengthOf(6);\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://reqres.in/api/users",
+							"protocol": "https",
+							"host": [
+								"reqres",
+								"in"
+							],
+							"path": [
+								"api",
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Check the status code via node.js",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"const assert = require('assert')\r",
+									"\r",
+									"pm.test(\"Status code is 200 via 'ok'\", function () {\r",
+									"   assert.ok(pm.response.code === 200)\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Status code is '200' via 'equal'\", function () {\r",
+									"   assert.equal(pm.response.code, '200')\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Status code is 200 via 'strictEqual'\", function () {\r",
+									"   assert.strictEqual(pm.response.code, 200)\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://reqres.in/api/users",
+							"protocol": "https",
+							"host": [
+								"reqres",
+								"in"
+							],
+							"path": [
+								"api",
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Check the header",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Check header with 'to.have.header'\", function () {\r",
+									"   pm.response.to.have.header('Content-Type', \"application/json; charset=utf-8\")\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Check header with 'get'\", function () {\r",
+									"   pm.expect(pm.response.headers.get('Content-Type')).to.eql(\"application/json; charset=utf-8\")\r",
+									"});\r",
+									"\r",
+									"\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://reqres.in/api/users",
+							"protocol": "https",
+							"host": [
+								"reqres",
+								"in"
+							],
+							"path": [
+								"api",
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Check the header Copy",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Check header with 'to.have.header'\", function () {\r",
+									"   pm.response.to.have.header('Content-Type', \"application/json; charset=utf-8\")\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Check header with 'get'\", function () {\r",
+									"   pm.expect(pm.response.headers.get('Content-Type')).to.eql(\"application/json; charset=utf-8\")\r",
+									"});\r",
+									"\r",
+									"\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://reqres.in/api/users",
+							"protocol": "https",
+							"host": [
+								"reqres",
+								"in"
+							],
+							"path": [
+								"api",
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Count headers of the response",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Check that quantity of the headers is 19\", function () {\r",
+									"   pm.expect(pm.response.headers.count()).to.eql(19)\r",
+									"});\r",
+									"\r",
+									"\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://reqres.in/api/users",
+							"protocol": "https",
+							"host": [
+								"reqres",
+								"in"
+							],
+							"path": [
+								"api",
+								"users"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
