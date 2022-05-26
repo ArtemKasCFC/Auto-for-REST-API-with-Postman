@@ -1,0 +1,9 @@
+[{
+ "email":"prostoemailforfirsttest@mail.ru",
+ "name":"herewillbethefirstname",
+ "password": 123
+},{
+ "email":"prostoemailforsecondtest@mail.ru",
+ "name":"herewillbethesecondname",
+ "password": 123
+}]
