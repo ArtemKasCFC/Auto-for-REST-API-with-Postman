@@ -18,7 +18,11 @@
 								"exec": [
 									"pm.test(\"Status code is 230\", function () {\r",
 									"    pm.response.to.have.status(230);\r",
-									"});"
+									"});\r",
+									"\r",
+									"// pm.test(\"Status code shoud be 230\", function () {\r",
+									"//     pm.response.to.have.status(231);\r",
+									"// });"
 								],
 								"type": "text/javascript"
 							}
@@ -65,7 +69,11 @@
 								"exec": [
 									"pm.test(\"Status code is 231\", function () {\r",
 									"    pm.response.to.have.status(231);\r",
-									"});"
+									"});\r",
+									"\r",
+									"// pm.test(\"Status code shoud be 231\", function () {\r",
+									"//     pm.response.to.have.status(230);\r",
+									"// });"
 								],
 								"type": "text/javascript"
 							}
@@ -112,7 +120,11 @@
 								"exec": [
 									"pm.test(\"Status code is 232\", function () {\r",
 									"    pm.response.to.have.status(232);\r",
-									"});"
+									"});\r",
+									"\r",
+									"// pm.test(\"Status code shoud be 232\", function () {\r",
+									"//     pm.response.to.have.status(231);\r",
+									"// });"
 								],
 								"type": "text/javascript"
 							}
@@ -126,7 +138,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n\"query\":\"ст\",\r\n\"partyType\":\"USER\",\r\n\"fullSimilarity\":false\r\n}",
+							"raw": "{\r\n\"query\":\"ст\",\r\n\"partyType\":\"USER\",\r\n\"fullSimilarity\":false,\r\n\"include\":\"USER\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -159,7 +171,11 @@
 								"exec": [
 									"pm.test(\"Status code is 233\", function () {\r",
 									"    pm.response.to.have.status(233);\r",
-									"});"
+									"});\r",
+									"\r",
+									"// pm.test(\"Status code shoud be 233\", function () {\r",
+									"//     pm.response.to.have.status(231);\r",
+									"// });"
 								],
 								"type": "text/javascript"
 							}
@@ -173,7 +189,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n\"query\":\"Рога\",\r\n\"partyType\":\"COMPANY\",\r\n\"fullSimilarity\":false\r\n}",
+							"raw": "{\r\n\"query\":\"ОАО Петушки\",\r\n\"partyType\":\"COMPANY\",\r\n\"fullSimilarity\":false,\r\n\"include\":\"COMPANY\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -206,7 +222,11 @@
 								"exec": [
 									"pm.test(\"Status code is 234\", function () {\r",
 									"    pm.response.to.have.status(234);\r",
-									"});"
+									"});\r",
+									"\r",
+									"// pm.test(\"Status code shoud be 234\", function () {\r",
+									"//     pm.response.to.have.status(231);\r",
+									"// });"
 								],
 								"type": "text/javascript"
 							}
@@ -253,7 +273,11 @@
 								"exec": [
 									"pm.test(\"Status code is 235\", function () {\r",
 									"    pm.response.to.have.status(235);\r",
-									"});"
+									"});\r",
+									"\r",
+									"// pm.test(\"Status code shoud be 235\", function () {\r",
+									"//     pm.response.to.have.status(231);\r",
+									"// });"
 								],
 								"type": "text/javascript"
 							}
@@ -300,7 +324,11 @@
 								"exec": [
 									"pm.test(\"Status code is 455\", function () {\r",
 									"    pm.response.to.have.status(455);\r",
-									"});"
+									"});\r",
+									"\r",
+									"// pm.test(\"Status code shoud be 455\", function () {\r",
+									"//     pm.response.to.have.status(231);\r",
+									"// });"
 								],
 								"type": "text/javascript"
 							}
@@ -335,7 +363,11 @@
 								"exec": [
 									"pm.test(\"Status code is 456\", function () {\r",
 									"    pm.response.to.have.status(456);\r",
-									"});"
+									"});\r",
+									"\r",
+									"// pm.test(\"Status code shoud be 456\", function () {\r",
+									"//     pm.response.to.have.status(231);\r",
+									"// });"
 								],
 								"type": "text/javascript"
 							}
@@ -382,7 +414,11 @@
 								"exec": [
 									"pm.test(\"Status code is 457\", function () {\r",
 									"    pm.response.to.have.status(457);\r",
-									"});"
+									"});\r",
+									"\r",
+									"// pm.test(\"Status code shoud be 457\", function () {\r",
+									"//     pm.response.to.have.status(231);\r",
+									"// });"
 								],
 								"type": "text/javascript"
 							}
@@ -429,7 +465,11 @@
 								"exec": [
 									"pm.test(\"Status code is 458\", function () {\r",
 									"    pm.response.to.have.status(458);\r",
-									"});"
+									"});\r",
+									"\r",
+									"// pm.test(\"Status code shoud be 458\", function () {\r",
+									"//     pm.response.to.have.status(231);\r",
+									"// });"
 								],
 								"type": "text/javascript"
 							}
@@ -476,7 +516,11 @@
 								"exec": [
 									"pm.test(\"Status code is 459\", function () {\r",
 									"    pm.response.to.have.status(459);\r",
-									"});"
+									"});\r",
+									"\r",
+									"// pm.test(\"Status code shoud be 459\", function () {\r",
+									"//     pm.response.to.have.status(231);\r",
+									"// });"
 								],
 								"type": "text/javascript"
 							}
@@ -1385,6 +1429,677 @@
 							"response": []
 						}
 					]
+				}
+			]
+		},
+		{
+			"name": "HW_7",
+			"item": [
+				{
+					"name": "Check type of the keys with 'if'",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"let jsonData = pm.response.json();\r",
+									"\r",
+									"if(jsonData.tasks.length > 0){\r",
+									"pm.test(\"Check types of the keys in the 'tasks'\", function () {\r",
+									"    pm.expect(jsonData.tasks[0].name).to.be.a('string');\r",
+									"    pm.expect(jsonData.tasks[0].id_task).to.be.a('number');\r",
+									"});\r",
+									"};\r",
+									"\r",
+									"if(jsonData.companys.length > 0){\r",
+									"pm.test(\"Check types of the keys in the 'companys'\", function () {\r",
+									"    pm.expect(jsonData.tasks[0].name).to.be.a('string');\r",
+									"    pm.expect(jsonData.tasks[0].id_task).to.be.a('number');\r",
+									"});\r",
+									"}"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://users.bugred.ru/tasks/rest/getuserfull?email=gendir@romashka.ru",
+							"protocol": "http",
+							"host": [
+								"users",
+								"bugred",
+								"ru"
+							],
+							"path": [
+								"tasks",
+								"rest",
+								"getuserfull"
+							],
+							"query": [
+								{
+									"key": "email",
+									"value": "gendir@romashka.ru"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Check that emails have '@'",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"let jsonData = pm.response.json();\r",
+									"\r",
+									"pm.test(\"Check that emails have '@' with 'for'\", function () {\r",
+									"    for(let i = 0; i < jsonData.data.length; i++){\r",
+									"    pm.expect(jsonData.data[i].email).to.include('@');}\r",
+									"});\r",
+									"\r",
+									"jsonData.data.forEach(item => {\r",
+									"pm.test(\"Check that emails have '@' with 'forEach'\", function () {\r",
+									"    pm.expect(item.email).to.include('@');\r",
+									"});\r",
+									"})"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://reqres.in/api/users",
+							"protocol": "https",
+							"host": [
+								"reqres",
+								"in"
+							],
+							"path": [
+								"api",
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Check name of the user by id",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"let jsonData = pm.response.json();\r",
+									"\r",
+									"jsonData.data.forEach(item => {\r",
+									"    if(item.id === 4){\r",
+									"        pm.test(\"Check user name\", function () {\r",
+									"    pm.expect(item.first_name).to.eql('Eve');\r",
+									"});\r",
+									"    }\r",
+									"})\r",
+									"\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://reqres.in/api/users",
+							"protocol": "https",
+							"host": [
+								"reqres",
+								"in"
+							],
+							"path": [
+								"api",
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create user in pre-request and change his hobby",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									"let newRequest = {\r",
+									"    url : \"http://users.bugred.ru/tasks/rest/doregister\",\r",
+									"    method : \"POST\",\r",
+									"    body : {\r",
+									"    mode: 'raw',\r",
+									"    raw: JSON.stringify({email: \"newemailfortest@gmail.ru\",\r",
+									"    name: \"nameNameName\",\r",
+									"    password: 123})\r",
+									"    }\r",
+									"}\r",
+									"\r",
+									"pm.sendRequest(newRequest, function(err, res) {\r",
+									"    console.log(err ? err : res)\r",
+									"})"
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://users.bugred.ru/tasks/rest/useronefield?email=newemailfortest@gmail.ru&field=hobby&value=JustHobby",
+							"protocol": "http",
+							"host": [
+								"users",
+								"bugred",
+								"ru"
+							],
+							"path": [
+								"tasks",
+								"rest",
+								"useronefield"
+							],
+							"query": [
+								{
+									"key": "email",
+									"value": "newemailfortest@gmail.ru"
+								},
+								{
+									"key": "field",
+									"value": "hobby"
+								},
+								{
+									"key": "value",
+									"value": "JustHobby"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create user in pre-request and change his hobby Copy",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									"\r",
+									"let firstRequest = {\r",
+									"    url : \"http://users.bugred.ru/tasks/rest/doregister\",\r",
+									"    method : \"POST\",\r",
+									"    body : {\r",
+									"    mode: 'raw',\r",
+									"    raw: JSON.stringify({email: \"anothernewemailfortest@gmail.ru\",\r",
+									"    name: \"myNameUser\",\r",
+									"    password: 123})\r",
+									"    }\r",
+									"}\r",
+									"\r",
+									"let secondRequest = {\r",
+									"    url : \"http://users.bugred.ru/tasks/rest/createcompany\",\r",
+									"    method : \"POST\",\r",
+									"    body : {\r",
+									"    mode: 'raw',\r",
+									"    raw: JSON.stringify({company_name: \"MyCompany1\",\r",
+									"    company_type: \"OOO\",\r",
+									"    company_users: [\"anothernewemailfortest@gmail.ru\"],\r",
+									"    email_owner: \"anothernewemailfortest@gmail.ru\"})\r",
+									"    }\r",
+									"}\r",
+									"\r",
+									"pm.sendRequest(secondRequest, function() {\r",
+									"    pm.sendRequest(firstRequest, function(){\r",
+									"        console.log('Done')\r",
+									"    })\r",
+									"})"
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://users.bugred.ru/tasks/rest/getuserfull?email=anothernewemailfortest@gmail.ru",
+							"protocol": "http",
+							"host": [
+								"users",
+								"bugred",
+								"ru"
+							],
+							"path": [
+								"tasks",
+								"rest",
+								"getuserfull"
+							],
+							"query": [
+								{
+									"key": "email",
+									"value": "anothernewemailfortest@gmail.ru"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "HW_8",
+			"item": [
+				{
+					"name": "Check uuid by regexp",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"    let jsonData = pm.response.json();\r",
+									"\r",
+									"pm.test(\"Check that uuid is valid by regexp\", function () {\r",
+									"    pm.expect(jsonData.uuid).to.match(/^\\w{8}\\-\\w{4}\\-\\w{4}-\\w{4}\\-\\w{12}/);\r",
+									"});\r",
+									"\r",
+									"console.log(jsonData.uuid)"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://httpbin.org/uuid",
+							"protocol": "http",
+							"host": [
+								"httpbin",
+								"org"
+							],
+							"path": [
+								"uuid"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Check date by regexp",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"let jsonData = pm.response.json();\r",
+									"\r",
+									"pm.test(\"Chack date by regexp\", function () {\r",
+									"    pm.expect(jsonData.createdAt).to.match(/^(202[2-9])\\-(0[1-9]|1[0-2])\\-(0[1-9]|12[0-9]|3[01])/);\r",
+									"});\r",
+									"\r",
+									"console.log(jsonData.createdAt)"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"morpheus{{$guid}}\",\r\n    \"job\": \"leader\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://reqres.in/api/users",
+							"protocol": "https",
+							"host": [
+								"reqres",
+								"in"
+							],
+							"path": [
+								"api",
+								"users"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "HW_9",
+			"item": [
+				{
+					"name": "JSON Schema (tv4)",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"const schema = {\r",
+									" \"type\": \"object\",\r",
+									" \"properties\": {\"name\": {\"type\": \"string\"},\r",
+									"                \"job\": {\"type\": \"string\"},\r",
+									"                \"id\": {\"type\": \"string\"},\r",
+									"                \"createdAt\": {\"type\": \"string\"}}\r",
+									" }\r",
+									";\r",
+									"let jsonData  = pm.response.json();\r",
+									"\r",
+									"pm.test('Schema is valid by tv4', function() {\r",
+									"  pm.expect(tv4.validate(jsonData, schema)).to.be.true;\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"morpheus\",\r\n    \"job\": \"leader\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://reqres.in/api/users",
+							"protocol": "https",
+							"host": [
+								"reqres",
+								"in"
+							],
+							"path": [
+								"api",
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "JSON Schema (ajv)",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"const schema = {\r",
+									"  \"properties\": {\"name\": {\"type\": \"string\"},\r",
+									"                \"job\": {\"type\": \"string\"},\r",
+									"                \"id\": {\"type\": \"string\"},\r",
+									"                \"createdAt\": {\"type\": \"string\"}\r",
+									"  }\r",
+									"};\r",
+									"pm.test('Schema is valid', function() {\r",
+									"  pm.response.to.have.jsonSchema(schema);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"morpheus\",\r\n    \"job\": \"leader\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://reqres.in/api/users",
+							"protocol": "https",
+							"host": [
+								"reqres",
+								"in"
+							],
+							"path": [
+								"api",
+								"users"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "HW_10",
+			"item": [
+				{
+					"name": "Check the link by the attribute",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"const $ = cheerio.load(pm.response.text());\r",
+									"\r",
+									"\r",
+									"pm.test(\"Check the link 'О проекте'\", function () {\r",
+									"    pm.expect($('a[target=\"_blank\"]').attr('href')).to.eql(\"https://okiseleva.blogspot.com/2017/04/users-soap-rest.html\");\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://users.bugred.ru/",
+							"protocol": "http",
+							"host": [
+								"users",
+								"bugred",
+								"ru"
+							],
+							"path": [
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Check the link by the attribute Copy",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"const $ = cheerio.load(pm.response.text());\r",
+									"\r",
+									"let classCheck  = $('a[href|=\"https://software-testing.ru/edu/3\"]').each(function () {console.log($(this).attr())})\r",
+									"\r",
+									"// pm.test(\"Your test name\", function () {\r",
+									"//    pm.expect($('a[href|=\"https://software-testing.ru/edu/3\"]').each(function () {console.log($(this).attr('title'))})).to.match(/Начало:\\s(([12][0-9]|3[01])|[1-9])\\s(июня|июля)\\s2022/);\r",
+									"// });\r",
+									"\r",
+									"\r",
+									"    pm.test(\"Your test name\", function () {\r",
+									"   pm.expect($('a[href|=\"https://software-testing.ru/edu/3\"]').each(function () {console.log($(this).attr())})).to.deep.include({'class': \"slickTip\"});\r",
+									"});\r",
+									"\r",
+									"// pm.test(\"Your test name\", function () {\r",
+									"//    pm.expect($('a[href|=\"https://software-testing.ru/edu/3\"]').each(function () {console.log($(this).attr())})).to.deep.include({'class': \"slickTip\"});\r",
+									"// });\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://software-testing.ru/",
+							"protocol": "https",
+							"host": [
+								"software-testing",
+								"ru"
+							],
+							"path": [
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "HW_11",
+			"item": [
+				{
+					"name": "Create item with photo",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "Филя",
+									"type": "text"
+								},
+								{
+									"key": "section",
+									"value": "Платья",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "Норм так платье",
+									"type": "text"
+								},
+								{
+									"key": "photo",
+									"value": "data:image/jpeg;base64,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",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://shop.bugred.ru/api/items/create/",
+							"protocol": "http",
+							"host": [
+								"shop",
+								"bugred",
+								"ru"
+							],
+							"path": [
+								"api",
+								"items",
+								"create",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Check that item is created in DB",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									" let jsonData = pm.response.json();\r",
+									"\r",
+									"pm.test(\"Image exists\", function () {\r",
+									"    pm.expect(jsonData.result[0].image).to.exist;\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "sql_query",
+									"value": "select * from items where last_id = 980",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://shop.bugred.ru/api/items/select/",
+							"protocol": "http",
+							"host": [
+								"shop",
+								"bugred",
+								"ru"
+							],
+							"path": [
+								"api",
+								"items",
+								"select",
+								""
+							]
+						}
+					},
+					"response": []
 				}
 			]
 		}

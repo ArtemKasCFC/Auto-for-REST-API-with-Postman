@@ -1,0 +1,9 @@
+Открываем документацию по Users (https://testbase.atlassian.net/wiki/spaces/USERS/pages/592511089/SOAP+REST), 
+находим метод MagicSearch (https://testbase.atlassian.net/wiki/spaces/USERS/pages/1249378773/MagicSearch).
+
+Ваша задача — написать автотесты на блок «Статусы ответов». Статусы 200 и 400 тестировать не надо, 
+они не должен встречаться. На каждый статус пишем 2 теста: один нормальный, второй сломан
+
+Данные для входа:
+логин — mail.for.testbase@gmail.com
+пароль — 12345678910
