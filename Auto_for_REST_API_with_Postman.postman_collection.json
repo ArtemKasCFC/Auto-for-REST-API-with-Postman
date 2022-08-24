@@ -712,16 +712,51 @@
 			"name": "HW_3",
 			"item": [
 				{
-					"name": "Find name of the company and show it in console",
+					"name": "1. Find user's surname",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"User's surname\", function () {\r",
+									"    let userName = pm.response.json().data[4].last_name;\r",
+									"    console.log(userName)\r",
+									"    pm.expect(userName).to.eql('Morris');\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://reqres.in/api/users",
+							"protocol": "https",
+							"host": [
+								"reqres",
+								"in"
+							],
+							"path": [
+								"api",
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "2. Find name of the company and show it in console",
 					"event": [
 						{
 							"listen": "test",
 							"script": {
 								"exec": [
 									"pm.test(\"Check that company exists\", function () {\r",
-									"    let nameOfTheCompany = pm.response.json().results[0].companies[1].name;\r",
+									"    let nameOfTheCompany = pm.response.json().results[0].name;\r",
 									"    console.log(nameOfTheCompany)\r",
-									"    pm.expect(nameOfTheCompany).to.eql('Компания для гендира №1');\r",
+									"    pm.expect(nameOfTheCompany).to.eql('Экспериментариус');\r",
 									"});"
 								],
 								"type": "text/javascript"
@@ -736,7 +771,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\"query\": \"maglotky\"} ",
+							"raw": "{\"query\": \"Экспериментариус\",\r\n\"party\": \"COMPANY\"} ",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -761,22 +796,16 @@
 					"response": []
 				},
 				{
-					"name": "Find user's name and quantity of the users in the page",
+					"name": "3. Check the quantity of the users",
 					"event": [
 						{
 							"listen": "test",
 							"script": {
 								"exec": [
-									"pm.test(\"Check the quantity of the users \", function () {\r",
+									"pm.test(\"Check the quantity of the users\", function () {\r",
 									"    let quantity = pm.response.json().total;\r",
 									"    console.log(quantity)\r",
 									"    pm.expect(quantity).to.eql(12);\r",
-									"});\r",
-									"\r",
-									"pm.test(\"Check that company exists\", function () {\r",
-									"    let userName = pm.response.json().data[4].first_name;\r",
-									"    console.log(userName)\r",
-									"    pm.expect(userName).to.eql('Charles');\r",
 									"});"
 								],
 								"type": "text/javascript"
@@ -796,6 +825,83 @@
 							"path": [
 								"api",
 								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "4. Check task in JIRA",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"let jsonData = pm.response.json()\r",
+									"\r",
+									"console.log(jsonData.fields.watches.watchCount) //3\r",
+									"console.log(jsonData.fields.issuelinks[0].type.name) //Блокирует\r",
+									"console.log(jsonData.fields.status.statusCategory.colorName) //blue-gray\r",
+									"console.log(jsonData.fields.attachment[0].author.displayName) //okiseleva\r",
+									"console.log(jsonData.fields.subtasks[0].fields.summary) //Сабтаск 1\r",
+									"console.log(jsonData.fields.subtasks[0].fields.status.statusCategory.id) //2\r",
+									"console.log(jsonData.fields.subtasks[0].fields.priority.name) //Medium\r",
+									"console.log(jsonData.fields.comment.comments[0].author.timeZone) //Europe/Moscow\r",
+									"\r",
+									"pm.test(\"Check task\", function () {\r",
+									"  pm.expect(jsonData.fields.watches.watchCount).to.eql(3);\r",
+									"  pm.expect(jsonData.fields.issuelinks[0].type.name).to.eql('Блокирует');\r",
+									"  pm.expect(jsonData.fields.status.statusCategory.colorName).to.eql('blue-gray');\r",
+									"  pm.expect(jsonData.fields.attachment[0].author.displayName).to.eql('okiseleva');\r",
+									"  pm.expect(jsonData.fields.subtasks[0].fields.summary).to.eql('Сабтаск 1');\r",
+									"  pm.expect(jsonData.fields.subtasks[0].fields.status.statusCategory.id).to.eql(2);\r",
+									"  pm.expect(jsonData.fields.subtasks[0].fields.priority.name).to.eql('Medium');\r",
+									"  pm.expect(jsonData.fields.comment.comments[0].author.timeZone).to.eql('Europe/Moscow');\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "JtFwnxc2lsY7f29C5GTPEFBB",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "mail.for.testbase@gmail.com",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "",
+								"value": "",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "https://testbase.atlassian.net/rest/api/3/issue/TV-4",
+							"protocol": "https",
+							"host": [
+								"testbase",
+								"atlassian",
+								"net"
+							],
+							"path": [
+								"rest",
+								"api",
+								"3",
+								"issue",
+								"TV-4"
 							]
 						}
 					},
