@@ -1,0 +1,73 @@
+1. Тестируем текст.
+(\__/)
+(='.'=)
+E[:]|||||[:]З
+(")_(")
+
+Проверьте его через postman. Сначала создайте через переменную, а потом протестируйте ее.
+
+2. Jira: это точно запрошенный таск?
+Тестируем JIRA, метод Get issue.
+https://developer.atlassian.com/cloud/jira/platform/rest/v3/api-group-issues/#api-rest-api-3-issue-issueidorkey-get
+
+Ваша задача:
+
+1. Дернуть метод по задаче TV-4  
+
+2. Убедиться, что в ответе действительно вернулась именно TV-4.
+
+
+3. Jira: создаем комментарий
+Тестируем JIRA, метод Add comment.
+https://developer.atlassian.com/cloud/jira/platform/rest/v3/api-group-issue-comments/#api-rest-api-3-issue-issueidorkey-comment-post
+
+Ваша задача:
+
+1. Создать комментарий к задаче 
+
+2. Проверить, что он действительно создан
+
+Тело запроса можно взять из примера в документации, убрав visibility (текст можно заменить, по желанию):
+
+{"body":{"type": "doc",
+"version": 1,
+"content": [
+{
+"type": "paragraph",
+"content": [
+{
+"type": "text",
+"text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque eget venenatis elit. Duis eu justo eget augue iaculis fermentum. Sed semper quam laoreet nisi egestas at posuere augue semper."
+}
+]
+}
+]
+}}
+
+
+4. Users: проверяем name компании в ответе
+Тестируем Users, метод getuserfull.
+
+Ваша задача — вызвать метод по юзеру, у которого есть компания. И проверить name компании (любой, если их несколько). Проверять надо двумя способами:
+
+1. Обычный запрос
+
+2. Через nested include, в «что сравниваем» у нас только jsonData (или ваше название переменной для pm.response.json(), ответа от сервера)
+
+
+5. Users: массивы возвращать всегда, даже пустые!
+Тестируем Users, метод getuserfull.
+
+Ваша задача — проверить, что метод всегда возвращает массивы tasks и companys, даже если они пустые. Это — важная проверка, потому что существуют разные практики поведения, если в ответе элемент пустой:
+
+а) не возвращать его вообще;
+
+б) возвращать всегда (даже пустым).
+
+Для метода getuserfull мы выбрали второй вариант. И вам это нужно проверить.
+
+
+6. Ой, тест не работает.
+Я написала тесты, а они не работают.
+
+Ваша задача — починить тесты из приложенной коллекции.

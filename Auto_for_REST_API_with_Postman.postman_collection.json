@@ -869,7 +869,7 @@
 							"basic": [
 								{
 									"key": "password",
-									"value": "JtFwnxc2lsY7f29C5GTPEFBB",
+									"value": "kMGp86SbdpEnMwgZu0VT7AF7",
 									"type": "string"
 								},
 								{
@@ -913,22 +913,23 @@
 			"name": "HW_4",
 			"item": [
 				{
-					"name": "Check the email of the user with 'eql' and 'nested.include'",
+					"name": "1. Test text-image",
 					"event": [
 						{
 							"listen": "test",
 							"script": {
 								"exec": [
-									"let jsonData = pm.response.json();\r",
+									"const bunny = '(\\\\__/)n\\\r",
+									"               (=\\'.\\'=)n\\\r",
+									"               E[:]|||||[:]Зn\\\r",
+									"                (\")_(\")'\r",
 									"\r",
-									"pm.test(\"Check email of the user with 'eql'\", function () {\r",
-									"    pm.expect(jsonData.data[0].email).to.eql(\"george.bluth@reqres.in\");\r",
-									"});\r",
-									"\r",
-									"pm.test(\"Check email of the user with 'nested.include'\", function () {\r",
-									"    pm.expect(jsonData).to.nested.include({\"data[0].email\" :\"george.bluth@reqres.in\"});\r",
-									"});\r",
-									""
+									"pm.test(\"Check bunny\", function () {\r",
+									"    pm.expect(bunny).to.eql('(\\\\__/)n\\\r",
+									"               (=\\'.\\'=)n\\\r",
+									"               E[:]|||||[:]Зn\\\r",
+									"                (\")_(\")');\r",
+									"});"
 								],
 								"type": "text/javascript"
 							}
@@ -938,35 +939,276 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "https://reqres.in/api/users",
-							"protocol": "https",
+							"raw": "google.com",
 							"host": [
-								"reqres",
-								"in"
-							],
-							"path": [
-								"api",
-								"users"
+								"google",
+								"com"
 							]
 						}
 					},
 					"response": []
 				},
 				{
-					"name": "Исправить тест №1",
+					"name": "2. Check that the name of the task is 'TV-4'",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"let jsonData = pm.response.json()\r",
+									"\r",
+									"console.log(jsonData.key) //TV-4\r",
+									"\r",
+									"pm.test(\"Check task\", function () {\r",
+									"  pm.expect(jsonData.key).to.eql(\"TV-4\");\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "kMGp86SbdpEnMwgZu0VT7AF7",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "mail.for.testbase@gmail.com",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "",
+								"value": "",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "https://testbase.atlassian.net/rest/api/3/issue/TV-4",
+							"protocol": "https",
+							"host": [
+								"testbase",
+								"atlassian",
+								"net"
+							],
+							"path": [
+								"rest",
+								"api",
+								"3",
+								"issue",
+								"TV-4"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "3. Create comment and check the status",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"let jsonData = pm.response.json()\r",
+									"\r",
+									"console.log(jsonData)\r",
+									"\r",
+									"pm.test(\"Status code is 201\", function () {\r",
+									"    pm.response.to.have.status(201);\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "kMGp86SbdpEnMwgZu0VT7AF7",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "mail.for.testbase@gmail.com",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "issueIdOrKey",
+								"value": "\"TEST-17012\"",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"body\": {\r\n        \"type\": \"doc\",\r\n        \"version\": 1,\r\n        \"content\": [{\r\n            \"type\": \"paragraph\",\r\n            \"content\": [{\r\n                \"type\": \"text\",\r\n                \"text\": \"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque eget venenatis elit. Duis eu justo eget augue iaculis fermentum. Sed semper quam laoreet nisi egestas at posuere augue semper.\"\r\n            }]\r\n        }]\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://testbase.atlassian.net/rest/api/3/issue/TEST-17012/comment",
+							"protocol": "https",
+							"host": [
+								"testbase",
+								"atlassian",
+								"net"
+							],
+							"path": [
+								"rest",
+								"api",
+								"3",
+								"issue",
+								"TEST-17012",
+								"comment"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "4. Check the name of the company in 2 ways",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"const json = pm.response.json()\r",
+									"console.log(json.companys[0].name)\r",
+									"\r",
+									"pm.test(\"Check company with 'eql'\", function () {\r",
+									"    pm.expect(json.companys[0].name).to.eql(\"Алкоголики и тунеядцы\");\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Check company with 'nested include'\", function () {\r",
+									"    pm.expect(json).to.nested.include({'companys[0].name' : \"Алкоголики и тунеядцы\"});\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://users.bugred.ru/tasks/rest/getuserfull/?email=luda112@mail.ru",
+							"protocol": "http",
+							"host": [
+								"users",
+								"bugred",
+								"ru"
+							],
+							"path": [
+								"tasks",
+								"rest",
+								"getuserfull",
+								""
+							],
+							"query": [
+								{
+									"key": "email",
+									"value": "luda112@mail.ru"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "5. Check that response has tasks and companys arrays",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"const json = pm.response.json()\r",
+									"console.log(json.companys)\r",
+									"console.log(json.tasks)\r",
+									"\r",
+									"pm.test(\"Companys array exists\", function () {\r",
+									"    pm.expect(json).to.have.property('companys').that.is.an('array');\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Tasks array exists\", function () {\r",
+									"    pm.expect(json).to.have.property('tasks').that.is.an('array');\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://users.bugred.ru/tasks/rest/getuserfull/?email=emailfortest@test.com",
+							"protocol": "http",
+							"host": [
+								"users",
+								"bugred",
+								"ru"
+							],
+							"path": [
+								"tasks",
+								"rest",
+								"getuserfull",
+								""
+							],
+							"query": [
+								{
+									"key": "email",
+									"value": "emailfortest@test.com"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "6.1. Correct the test",
 					"event": [
 						{
 							"listen": "test",
 							"script": {
 								"exec": [
 									"var jsonData = pm.response.json();",
+									"console.log(jsonData.results[0].why_block)",
 									"",
+									"// Corrected",
 									"pm.test(\"Блок why_block показывает, по чему искали\", function () {",
-									"    pm.expect(jsonData.results[0].why_block).to.deep.eql([{",
+									"    pm.expect(jsonData.results[0].why_block).to.eql([{",
 									"                    \"field\": \"name\",",
 									"                    \"value\": \"Ромашка\"",
 									"                }]);",
 									"});",
+									"",
+									"",
+									"// Task",
+									"// pm.test(\"Блок why_block показывает, по чему искали\", function () {",
+									"//     pm.expect(jsonData.results[0].why_block).to.deep.eql({",
+									"//                     \"field\": \"name\",",
+									"//                     \"value\": \"Ромашка\"",
+									"//                 });",
+									"// });",
 									"",
 									""
 								],
@@ -1014,20 +1256,31 @@
 					"response": []
 				},
 				{
-					"name": "Исправить тест №2",
+					"name": "6.2. Correct the test",
 					"event": [
 						{
 							"listen": "test",
 							"script": {
 								"exec": [
 									"var jsonData = pm.response.json();",
+									"console.log(jsonData.results[0].companies)",
 									"",
+									"//Corrected",
 									"pm.test(\"Работает в алкоголиках и тунеяндцах\", function () {",
-									"    pm.expect(jsonData.results[0].companies[0]).to.include({",
+									"    pm.expect(jsonData.results[0].companies).to.deep.include({",
 									"                    \"name\": \"Алкоголики и тунеядцы\",",
 									"                    \"id_company\": 15",
 									"                });",
 									"});",
+									"",
+									"",
+									"// Task",
+									"// pm.test(\"Работает в алкоголиках и тунеяндцах\", function () {",
+									"//     pm.expect(jsonData.results[0].companies).to.include({",
+									"//                     \"name\": \"Алкоголики и тунеядцы\",",
+									"//                     \"id_company\": 15",
+									"//                 });",
+									"// });",
 									"",
 									""
 								],
