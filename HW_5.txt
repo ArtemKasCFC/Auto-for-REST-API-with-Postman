@@ -1,0 +1,63 @@
+1. Jira: это точно запрошенный таск?
+Тестируем JIRA, метод Get issue.
+https://developer.atlassian.com/cloud/jira/platform/rest/v3/api-group-issues/#api-rest-api-3-issue-issueidorkey-get
+
+Ваша задача:
+
+1. Дернуть метод по задаче TV-4  
+
+2. Проверить типы элементов — fixVersions, watches, workratio, issuelinks
+
+
+
+2. Тестируем объект
+Создайте объект и проверьте:
+
+1. что это правда объект
+
+2. от какого конструктора
+
+Как делать:
+
+1. Через консоль браузера
+
+2. В Postman
+
+Пример кода создания кошки
+
+function Cat (name, year) {
+this.name = name;
+this.year = year;
+}
+
+var pussy = new Cat("Pussy", 1);
+
+
+
+3. Users: тестируем в XML
+
+Отправьте запрос.
+Ответ должен вернуться в формате XML!
+Ваша задача — проверить, что в ответе есть имя.
+
+
+
+4. Reqres.in: тестируем статус через Node.js
+Берем код внутри тела ответа (строку)
+сравниваем его с кодом из статуса (с числом), используя библиотечку Node.js
+
+
+
+5. Jira: тестируем заголовки и cookie
+Тестируем JIRA, метод Get issue.
+https://developer.atlassian.com/cloud/jira/platform/rest/v3/api-group-issues/#api-rest-api-3-issue-issueidorkey-get
+
+Ваша задача:
+
+1. Дернуть метод по задаче TV-4  
+
+2. Убедиться в том, что:
+
+заголовок Server — "globaledge-envoy"
+в заголовке Content-Type стоит charset=UTF-8
+значение куки правильное (хотя мы верим, что оно правильное, и просто прописываем полученную куки в тест)
