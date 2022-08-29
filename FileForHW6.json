@@ -1,9 +1,26 @@
-[{
- "email":"prostoemailforfirsttest@mail.ru",
- "name":"herewillbethefirstname",
- "password": 123
-},{
- "email":"prostoemailforsecondtest@mail.ru",
- "name":"herewillbethesecondname",
- "password": 123
-}]
+[
+  {
+    "request": "string",
+    "status": 230
+  },
+  {
+    "request": "Красавчик",
+    "status": 231
+  },
+  {
+    "request": "ст",
+    "status": 232
+  },
+  {
+    "request": "ОАО Петушки",
+    "status": 233
+  },
+  {
+    "request": "Ромашка",
+    "status": 234
+  },
+  {
+    "request": "Ро",
+    "status": 235
+  }
+]

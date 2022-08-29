@@ -1621,10 +1621,10 @@
 			"name": "HW_6",
 			"item": [
 				{
-					"name": "Check chain of the tests",
+					"name": "1,2. Chain of the tests with environment variable",
 					"item": [
 						{
-							"name": "Registration with random values",
+							"name": "1. Registration with random values",
 							"event": [
 								{
 									"listen": "test",
@@ -1634,9 +1634,7 @@
 											"\r",
 											"pm.test(\"Status code is 200\", function () {\r",
 											"    pm.response.to.have.status(200);\r",
-											"});\r",
-											"\r",
-											""
+											"});"
 										],
 										"type": "text/javascript"
 									}
@@ -1672,7 +1670,7 @@
 							"response": []
 						},
 						{
-							"name": "Change user hobby",
+							"name": "2. Change user hobby",
 							"event": [
 								{
 									"listen": "test",
@@ -1686,11 +1684,8 @@
 									}
 								}
 							],
-							"protocolProfileBehavior": {
-								"disableBodyPruning": true
-							},
 							"request": {
-								"method": "GET",
+								"method": "POST",
 								"header": [],
 								"body": {
 									"mode": "formdata",
@@ -1698,25 +1693,22 @@
 										{
 											"key": "email",
 											"value": "{{userEmail}}",
-											"type": "text",
-											"disabled": true
+											"type": "text"
 										},
 										{
 											"key": "field",
 											"value": "hobby",
-											"type": "text",
-											"disabled": true
+											"type": "text"
 										},
 										{
 											"key": "value",
 											"value": "'newHobby'",
-											"type": "text",
-											"disabled": true
+											"type": "text"
 										}
 									]
 								},
 								"url": {
-									"raw": "http://users.bugred.ru/tasks/rest/useronefield?email={{userEmail}}&field=hobby&value=15",
+									"raw": "http://users.bugred.ru/tasks/rest/useronefield",
 									"protocol": "http",
 									"host": [
 										"users",
@@ -1727,27 +1719,13 @@
 										"tasks",
 										"rest",
 										"useronefield"
-									],
-									"query": [
-										{
-											"key": "email",
-											"value": "{{userEmail}}"
-										},
-										{
-											"key": "field",
-											"value": "hobby"
-										},
-										{
-											"key": "value",
-											"value": "15"
-										}
 									]
 								}
 							},
 							"response": []
 						},
 						{
-							"name": "Check that user is registered",
+							"name": "3. Check that user is registered",
 							"event": [
 								{
 									"listen": "test",
@@ -1755,7 +1733,15 @@
 										"exec": [
 											"pm.test(\"Status code is 200\", function () {\r",
 											"    pm.response.to.have.status(200);\r",
-											"});"
+											"});\r",
+											"\r",
+											"let jsonData = pm.response.json();\r",
+											"\r",
+											"pm.test(\"Check that hobby field is updated\", function () {\r",
+											"    pm.expect(jsonData.hobby).to.eql('newHobby');\r",
+											"});\r",
+											"\r",
+											"console.log(jsonData.hobby)"
 										],
 										"type": "text/javascript"
 									}
@@ -1790,35 +1776,42 @@
 					]
 				},
 				{
-					"name": "Create users with csv/json file",
+					"name": "3. Check method with data variables",
 					"item": [
 						{
-							"name": "Create users",
+							"name": "Check status",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"const status = data.status\r",
+											"\r",
+											"pm.test(\"Status code is \" + status, function () {\r",
+											"    pm.response.to.have.status(status);\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
 							"request": {
-								"method": "POST",
+								"method": "GET",
 								"header": [],
 								"body": {
-									"mode": "formdata",
-									"formdata": [
-										{
-											"key": "email",
-											"value": "{{email}}",
-											"type": "text"
-										},
-										{
-											"key": "name",
-											"value": "{{name}}",
-											"type": "text"
-										},
-										{
-											"key": "password",
-											"value": "{{password}}",
-											"type": "text"
+									"mode": "raw",
+									"raw": "{\"query\": \"{{request}}\"}",
+									"options": {
+										"raw": {
+											"language": "json"
 										}
-									]
+									}
 								},
 								"url": {
-									"raw": "http://users.bugred.ru/tasks/rest/doregister",
+									"raw": "http://users.bugred.ru/tasks/rest/magicsearch",
 									"protocol": "http",
 									"host": [
 										"users",
@@ -1828,7 +1821,7 @@
 									"path": [
 										"tasks",
 										"rest",
-										"doregister"
+										"magicsearch"
 									]
 								}
 							},
