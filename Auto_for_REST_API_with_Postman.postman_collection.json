@@ -1835,7 +1835,7 @@
 			"name": "HW_7",
 			"item": [
 				{
-					"name": "Check type of the keys with 'if'",
+					"name": "1. Check presence of the fields",
 					"event": [
 						{
 							"listen": "test",
@@ -1843,19 +1843,17 @@
 								"exec": [
 									"let jsonData = pm.response.json();\r",
 									"\r",
-									"if(jsonData.tasks.length > 0){\r",
-									"pm.test(\"Check types of the keys in the 'tasks'\", function () {\r",
-									"    pm.expect(jsonData.tasks[0].name).to.be.a('string');\r",
-									"    pm.expect(jsonData.tasks[0].id_task).to.be.a('number');\r",
-									"});\r",
-									"};\r",
+									"if (jsonData.tasks.length) {\r",
+									"pm.test(\"Check tasks\", function () {\r",
+									"    pm.expect(jsonData.tasks[0]).to.has.property('name').that.is.a('string');\r",
+									"    pm.expect(jsonData.tasks[0]).to.has.property('id_task').that.is.a('number');\r",
+									"});}\r",
 									"\r",
-									"if(jsonData.companys.length > 0){\r",
-									"pm.test(\"Check types of the keys in the 'companys'\", function () {\r",
-									"    pm.expect(jsonData.tasks[0].name).to.be.a('string');\r",
-									"    pm.expect(jsonData.tasks[0].id_task).to.be.a('number');\r",
-									"});\r",
-									"}"
+									"if (jsonData.companys.length) {\r",
+									"pm.test(\"Check companys\", function () {\r",
+									"    pm.expect(jsonData.companys[0]).to.has.property('name').that.is.a('string');\r",
+									"    pm.expect(jsonData.companys[0]).to.has.property('id_company').that.is.a('number');\r",
+									"});}"
 								],
 								"type": "text/javascript"
 							}
@@ -1865,7 +1863,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://users.bugred.ru/tasks/rest/getuserfull?email=gendir@romashka.ru",
+							"raw": "http://users.bugred.ru/tasks/rest/getuserfull?email={{userEmail}}",
 							"protocol": "http",
 							"host": [
 								"users",
@@ -1880,7 +1878,7 @@
 							"query": [
 								{
 									"key": "email",
-									"value": "gendir@romashka.ru"
+									"value": "{{userEmail}}"
 								}
 							]
 						}
@@ -1888,7 +1886,7 @@
 					"response": []
 				},
 				{
-					"name": "Check that emails have '@'",
+					"name": "2. Check that the response has only users",
 					"event": [
 						{
 							"listen": "test",
@@ -1896,41 +1894,53 @@
 								"exec": [
 									"let jsonData = pm.response.json();\r",
 									"\r",
-									"pm.test(\"Check that emails have '@' with 'for'\", function () {\r",
-									"    for(let i = 0; i < jsonData.data.length; i++){\r",
-									"    pm.expect(jsonData.data[i].email).to.include('@');}\r",
-									"});\r",
+									"for(let i = 0; i < jsonData.results.length; i++){\r",
+									"    pm.test(\"Check that results[\" + i + \"].type = 'user'\", function () {\r",
+									" console.log(jsonData.results[i].type)\r",
+									" pm.expect(jsonData.results[i].type).to.eql('user');\r",
+									" });}\r",
 									"\r",
-									"jsonData.data.forEach(item => {\r",
-									"pm.test(\"Check that emails have '@' with 'forEach'\", function () {\r",
-									"    pm.expect(item.email).to.include('@');\r",
-									"});\r",
-									"})"
+									" jsonData.results.forEach((el, i) => {\r",
+									"    pm.test(\"Check that response[\" + i + \"] has type = 'user'\", function () {\r",
+									"    pm.expect(el.type).to.eql('user');\r",
+									"    });\r",
+									" })"
 								],
 								"type": "text/javascript"
 							}
 						}
 					],
 					"request": {
-						"method": "GET",
+						"method": "POST",
 						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"query\": \"Ив\",\r\n\"partyType\": \"USER\"}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
 						"url": {
-							"raw": "https://reqres.in/api/users",
-							"protocol": "https",
+							"raw": "http://users.bugred.ru/tasks/rest/magicsearch",
+							"protocol": "http",
 							"host": [
-								"reqres",
-								"in"
+								"users",
+								"bugred",
+								"ru"
 							],
 							"path": [
-								"api",
-								"users"
+								"tasks",
+								"rest",
+								"magicsearch"
 							]
 						}
 					},
 					"response": []
 				},
 				{
-					"name": "Check name of the user by id",
+					"name": "3. Check that one of the arrays has name = 'Андрей'",
 					"event": [
 						{
 							"listen": "test",
@@ -1938,11 +1948,11 @@
 								"exec": [
 									"let jsonData = pm.response.json();\r",
 									"\r",
-									"jsonData.data.forEach(item => {\r",
-									"    if(item.id === 4){\r",
-									"        pm.test(\"Check user name\", function () {\r",
-									"    pm.expect(item.first_name).to.eql('Eve');\r",
-									"});\r",
+									"jsonData.results.forEach((el, i) =>{\r",
+									"    if(el.name === 'Андрей'){\r",
+									"        pm.test('results[' + i +'] = \"Андрей\"', function(){\r",
+									"        pm.expect(el.name).is.a('string').that.to.eql('Андрей')\r",
+									"        });\r",
 									"    }\r",
 									"})\r",
 									"\r",
@@ -1953,65 +1963,19 @@
 						}
 					],
 					"request": {
-						"method": "GET",
+						"method": "POST",
 						"header": [],
-						"url": {
-							"raw": "https://reqres.in/api/users",
-							"protocol": "https",
-							"host": [
-								"reqres",
-								"in"
-							],
-							"path": [
-								"api",
-								"users"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Create user in pre-request and change his hobby",
-					"event": [
-						{
-							"listen": "prerequest",
-							"script": {
-								"exec": [
-									"let newRequest = {\r",
-									"    url : \"http://users.bugred.ru/tasks/rest/doregister\",\r",
-									"    method : \"POST\",\r",
-									"    body : {\r",
-									"    mode: 'raw',\r",
-									"    raw: JSON.stringify({email: \"newemailfortest@gmail.ru\",\r",
-									"    name: \"nameNameName\",\r",
-									"    password: 123})\r",
-									"    }\r",
-									"}\r",
-									"\r",
-									"pm.sendRequest(newRequest, function(err, res) {\r",
-									"    console.log(err ? err : res)\r",
-									"})"
-								],
-								"type": "text/javascript"
+						"body": {
+							"mode": "raw",
+							"raw": "{\"query\": \"Ан\",\r\n\"partyType\": \"USER\"}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
 							}
 						},
-						{
-							"listen": "test",
-							"script": {
-								"exec": [
-									"pm.test(\"Status code is 200\", function () {\r",
-									"    pm.response.to.have.status(200);\r",
-									"});"
-								],
-								"type": "text/javascript"
-							}
-						}
-					],
-					"request": {
-						"method": "GET",
-						"header": [],
 						"url": {
-							"raw": "http://users.bugred.ru/tasks/rest/useronefield?email=newemailfortest@gmail.ru&field=hobby&value=JustHobby",
+							"raw": "http://users.bugred.ru/tasks/rest/magicsearch",
 							"protocol": "http",
 							"host": [
 								"users",
@@ -2021,62 +1985,57 @@
 							"path": [
 								"tasks",
 								"rest",
-								"useronefield"
-							],
-							"query": [
-								{
-									"key": "email",
-									"value": "newemailfortest@gmail.ru"
-								},
-								{
-									"key": "field",
-									"value": "hobby"
-								},
-								{
-									"key": "value",
-									"value": "JustHobby"
-								}
+								"magicsearch"
 							]
 						}
 					},
 					"response": []
 				},
 				{
-					"name": "Create user in pre-request and change his hobby Copy",
+					"name": "4. Create user and company and then check it",
 					"event": [
 						{
 							"listen": "prerequest",
 							"script": {
 								"exec": [
-									"\r",
-									"let firstRequest = {\r",
-									"    url : \"http://users.bugred.ru/tasks/rest/doregister\",\r",
-									"    method : \"POST\",\r",
-									"    body : {\r",
-									"    mode: 'raw',\r",
-									"    raw: JSON.stringify({email: \"anothernewemailfortest@gmail.ru\",\r",
-									"    name: \"myNameUser\",\r",
-									"    password: 123})\r",
-									"    }\r",
+									"const objForRequest = {\r",
+									"    url: \"http://users.bugred.ru/tasks/rest/createcompany\",\r",
+									"    method: \"POST\",\r",
+									"    body: {mode: \"raw\",\r",
+									"           raw: JSON.stringify({company_name: \"comForTest\",\r",
+									"           company_type: \"ООО\",\r",
+									"           company_users: [\"krokotest@mail.com\"],\r",
+									"           email_owner: \"krokotest@mail.com\"})}\r",
 									"}\r",
 									"\r",
-									"let secondRequest = {\r",
-									"    url : \"http://users.bugred.ru/tasks/rest/createcompany\",\r",
-									"    method : \"POST\",\r",
-									"    body : {\r",
-									"    mode: 'raw',\r",
-									"    raw: JSON.stringify({company_name: \"MyCompany1\",\r",
-									"    company_type: \"OOO\",\r",
-									"    company_users: [\"anothernewemailfortest@gmail.ru\"],\r",
-									"    email_owner: \"anothernewemailfortest@gmail.ru\"})\r",
-									"    }\r",
-									"}\r",
-									"\r",
-									"pm.sendRequest(secondRequest, function() {\r",
-									"    pm.sendRequest(firstRequest, function(){\r",
-									"        console.log('Done')\r",
+									"const objUser = {\r",
+									"    url: \"http://users.bugred.ru/tasks/rest/createuser\",\r",
+									"    method: \"POST\",\r",
+									"    body: {mode: \"raw\",\r",
+									"           raw: JSON.stringify({\r",
+									"        email: \"justEmailTest@mail.com\",\r",
+									"        name: \"justNametest\",\r",
+									"        tasks: [10],\r",
+									"        companies: [62]\r",
 									"    })\r",
-									"})"
+									"    }\r",
+									"}\r",
+									"\r",
+									" pm.sendRequest(objForRequest, function (err, res) {\r",
+									"if(err){\r",
+									"    console.log(err)\r",
+									"} else{ console.log(res.json())\r",
+									"     pm.sendRequest(objUser, function (err, res) {\r",
+									"        if(err){\r",
+									"            console.log(err)\r",
+									"        } else {\r",
+									"            console.log(res.json())\r",
+									"            \r",
+									"        }\r",
+									"        })\r",
+									"    }\r",
+									"});\r",
+									""
 								],
 								"type": "text/javascript"
 							}
@@ -2085,8 +2044,11 @@
 							"listen": "test",
 							"script": {
 								"exec": [
-									"pm.test(\"Status code is 200\", function () {\r",
-									"    pm.response.to.have.status(200);\r",
+									"let jsonData = pm.response.json();\r",
+									"\r",
+									"\r",
+									"pm.test(\"Check that user has this company\", function () {\r",
+									"    pm.expect(jsonData.companys[0].name).to.eql(\"comForTest\");\r",
 									"});"
 								],
 								"type": "text/javascript"
@@ -2094,10 +2056,10 @@
 						}
 					],
 					"request": {
-						"method": "GET",
+						"method": "POST",
 						"header": [],
 						"url": {
-							"raw": "http://users.bugred.ru/tasks/rest/getuserfull?email=anothernewemailfortest@gmail.ru",
+							"raw": "http://users.bugred.ru/tasks/rest/getuserfull?email=justEmailTest@mail.com",
 							"protocol": "http",
 							"host": [
 								"users",
@@ -2112,7 +2074,7 @@
 							"query": [
 								{
 									"key": "email",
-									"value": "anothernewemailfortest@gmail.ru"
+									"value": "justEmailTest@mail.com"
 								}
 							]
 						}
